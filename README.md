@@ -1,4 +1,4 @@
-## 前言
+# 前言
 
   CapsLite 主要基于 [CapsLock+](https://github.com/wo52616111/capslock-plus) 的代码进行修改，同时参考 [CapsLockPlus](https://github.com/PatrickShieh/CapsLockPlus) 和 [CapsLockMagic](https://github.com/miozus/CapslockMagic) 的代码进行完善，由于功能比较精简，故命名为 CapsLite
 
@@ -14,7 +14,7 @@
 
 <br/>
 
-## 如何使用
+# 如何使用
 
 > 注：目前 CapsLite 仅适用于 Windows 系统
 
@@ -40,11 +40,11 @@
 
 <br/>
 
-## 按键说明
+# 按键说明
 
 <br/>
 
-#### 预设功能键
+### 预设功能键
 
 包括 <kbd><b>CapsLock</b></kbd> 、<kbd><b>Tab</b></kbd> 、<kbd><b>Esc</b></kbd> 、<kbd><b>Backspace</b></kbd> 、<kbd><b>\\</b></kbd> 、<kbd><b>]</b></kbd> 、<kbd><b>;</b></kbd> 、<kbd><b>Space</b></kbd> 8 个按键。其中：
 
@@ -53,7 +53,7 @@
 
 <br/>
 
-#### Capslock 组
+### Capslock 组
 
 以下快捷键为 <kbd><b>Capslock</b></kbd> + <kbd><b>指定按键</b></kbd>
 
@@ -67,7 +67,7 @@
 
 <br/>
 
-#### Capslock + A 组
+### Capslock + A 组
 
 以下快捷键为 <kbd><b>Capslock</b></kbd> + <kbd><b>A</b></kbd> + <kbd><b>指定按键</b></kbd>
 
@@ -84,7 +84,7 @@
 
 <br/>
 
-#### Capslock + Space 组
+### Capslock + Space 组
 
 以下快捷键为 <kbd><b>Capslock</b></kbd> + <kbd><b>Space</b></kbd> + <kbd><b>指定按键</b></kbd>
 
@@ -103,7 +103,7 @@
 
 <br/>
 
-#### Space 组
+### Space 组
 
 以下快捷键为 <kbd><b>Space</b></kbd> + <kbd><b>指定按键</b></kbd>
 
@@ -122,7 +122,7 @@
 
 <br/>
 
-#### Semicolon 组
+### Semicolon 组
 
 以下快捷键为 <kbd><b>;</b></kbd> + <kbd><b>指定按键</b></kbd> ，用于发送英文字符
 
@@ -134,7 +134,7 @@
 
 <br/>
 
-#### Esc 、Tab 等按键
+### Esc 、Tab 等按键
 
 以下快捷键为 <kbd><b>Esc 、Tab 等功能键</b></kbd> + <kbd><b>指定按键</b></kbd> 。例如 <kbd><b>Tab</b></kbd> + <kbd><b>1</b></kbd> 实现的功能是 <kbd><b>Ctrl</b></kbd> + <kbd><b>F1</b></kbd>
 
@@ -166,7 +166,7 @@
 
 <br/>
 
-#### NumLock 组
+### NumLock 组
 
 以下快捷键仅在 <kbd><b>NumLock</b></kbd> 状态为 `Off` 时启用。不需要按住 <kbd><b>NumLock</b></kbd> 键哈，直接按 <kbd><b>指定按键</b></kbd> 即可
 
@@ -178,7 +178,7 @@
 
 <br/>
 
-## 存在的问题
+# 存在的问题
 
 1. 所有快捷键在文本编辑器和 Word 中支持良好，但是在 Excel 、PS 等软件中部分快捷键不能用，以后会考虑优化一下
 2. 没有英文说明，回头补上
@@ -192,7 +192,7 @@
 
 <br/>
 
-## 致谢
+# 致谢
 
   感谢 [CapsLock+](https://github.com/wo52616111/capslock-plus) 作者 [wo52616111](https://github.com/wo52616111) 和 [CapsLockMagic](https://github.com/miozus/CapslockMagic) 作者 [miozus](https://github.com/miozus) 对我提出问题的耐心解答
 
