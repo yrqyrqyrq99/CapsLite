@@ -21,14 +21,37 @@ kf_run(p){
 }
 
 
+RemoveToolTip:
+    ToolTip
+return
+
+
 kf_toggleCapsLock(){
     SetCapsLockState % !GetKeyState("CapsLock", "T")
+    if GetKeyState("CapsLock", "T"){
+        ToolTip, CapsLock On
+        SetTimer, RemoveToolTip, -2500
+        Sleep 100
+    } else {
+        ToolTip, CapsLock Off
+        SetTimer, RemoveToolTip, -2500
+        Sleep 100
+    }
     return
 }
 
 
 kf_toggleNumLock(){
     SetNumLockState % !GetKeyState("NumLock", "T")
+    if !GetKeyState("NumLock", "T"){
+        ToolTip, Numpad On
+        SetTimer, RemoveToolTip, -2500
+        Sleep 100
+    } else {
+        ToolTip, Numpad Off
+        SetTimer, RemoveToolTip, -2500
+        Sleep 100
+    }
     return
 }
 
@@ -47,12 +70,6 @@ kf_keyTab(){
 
 kf_keyEsc(){
     SendInput, {Esc}
-    return
-}
-
-
-kf_keyBackspace(){
-    SendInput, {Backspace}
     return
 }
 

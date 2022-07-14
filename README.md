@@ -46,7 +46,7 @@
 
 ### 预设功能键
 
-包括 <kbd><b>CapsLock</b></kbd> 、<kbd><b>Tab</b></kbd> 、<kbd><b>Esc</b></kbd> 、<kbd><b>Backspace</b></kbd> 、<kbd><b>\\</b></kbd> 、<kbd><b>]</b></kbd> 、<kbd><b>;</b></kbd> 、<kbd><b>Space</b></kbd> 8 个按键。其中：
+包括 <kbd><b>CapsLock</b></kbd> 、<kbd><b>Tab</b></kbd> 、<kbd><b>Esc</b></kbd> 、<kbd><b>\\</b></kbd> 、<kbd><b>]</b></kbd> 、<kbd><b>;</b></kbd> 、<kbd><b>Space</b></kbd> 7 个按键。其中：
 
 - 单独按 <kbd><b>CapsLock</b></kbd> 不做任何响应
 - 其它预设功能键，单独短按发送其原本功能，单独长按不做任何响应
@@ -138,13 +138,15 @@
 
 以下快捷键为 <kbd><b>Esc 、Tab 等功能键</b></kbd> + <kbd><b>指定按键</b></kbd> 。例如 <kbd><b>Tab</b></kbd> + <kbd><b>1</b></kbd> 实现的功能是 <kbd><b>Ctrl</b></kbd> + <kbd><b>F1</b></kbd>
 
-| 功能键                                                       | 指定按键                                                     | 实现功能                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <kbd><b>Tab</b></kbd>   | <kbd><b>数字键</b></kbd> 、<kbd><b>-</b></kbd> 、<kbd><b>=</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>F*</b></kbd> |
-| <kbd><b>Esc</b></kbd>   | *同上*                                                       | <kbd><b>Shift</b></kbd> + <kbd><b>F*</b></kbd> |
-| <kbd><b>\\</b></kbd>    | *同上*                                                       | <kbd><b>Alt</b></kbd> + <kbd><b>F*</b></kbd> |
-| <kbd><b>]</b></kbd>     | *同上*                                                       | <kbd><b>Ctrl</b></kbd> + <kbd><b>Alt</b></kbd> + <kbd><b>F*</b></kbd> |
-| <kbd><b>Backspace</b></kbd> | *同上*                                                       | <kbd><b>Alt</b></kbd> + <kbd><b>Shift</b></kbd> + <kbd><b>F*</b></kbd> |
+| 功能键                                     | 指定按键                                                     | 实现功能                                                     |
+| ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <kbd><b>Tab</b></kbd>                      | <kbd><b>数字键</b></kbd> 、<kbd><b>-</b></kbd> 、<kbd><b>=</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>F*</b></kbd>                |
+| <kbd><b>Esc</b></kbd>                      | *同上*                                                       | <kbd><b>Shift</b></kbd> + <kbd><b>F*</b></kbd>               |
+| <kbd><b>\\</b></kbd>                       | *同上*                                                       | <kbd><b>Alt</b></kbd> + <kbd><b>F*</b></kbd>                 |
+| <kbd><b>]</b></kbd>                        | *同上*                                                       | <kbd><b>Alt</b></kbd> + <kbd><b>Shift</b></kbd> + <kbd><b>F*</b></kbd> |
+| <kbd><b>\\</b></kbd> + <kbd><b>]</b></kbd> | *同上*                                                       | <kbd><b>Ctrl</b></kbd> + <kbd><b>Alt</b></kbd> + <kbd><b>F*</b></kbd> |
+
+> 注意：<kbd><b>\\</b></kbd> + <kbd><b>]</b></kbd> 功能键的按键顺序必须为 <kbd><b>\\</b></kbd> 、<kbd><b>]</b></kbd> 、<kbd><b>指定按键</b></kbd>
 
 其它快捷键
 
@@ -181,12 +183,14 @@
 # 存在的问题
 
 1. 所有快捷键在文本编辑器和 Word 中支持良好，但是在 Excel 、PS 等软件中部分快捷键不能用，以后会考虑优化一下
+   - **我在使用时发现所有发送字符功能在 Excel 中均不可用！！**不知道是我的问题还是 Excel 的问题，暂时搁置，等我有能力时在解决（捂脸）
+
 2. 没有英文说明，回头补上
 3. `CL_Settings.ini` 中的 `QSearch` 、`QRun` 、`QWeb` 三个字段是没用的（我把 QBar 删了嘛），因为我不确定把这些删了会不会出问题，就暂时保留了
 4. `CL_Settings.ini` 中的 `Keys` 字段目前也是不能用的，如果您需要修改映射需要在 `lib / lib_keysSet.ahk` 文件中修改
    - 刚搞明白原作者设置的函数咋用，懒得改了，回头再说
 5. `CL_Settings.ini` 中的 `TabHotString` 字段是**可以使用**的哈
-6. 以后考虑做一下大写锁定、数字键盘（未）锁定等的常显提示
+6. 以后考虑做一个大写锁定、数字键盘（未）锁定等的常显示悬浮窗
 
 <br/>
 

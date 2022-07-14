@@ -22,10 +22,6 @@ if(!keyset.press_esc){
     keyset.press_esc:="kf_keyEsc"
 }
 
-if(!keyset.press_bs){
-    keyset.press_bs:="kf_keyBackspace"
-}
-
 ;if(!keyset.press_sc){
 ;    keyset.press_sc:="kf_keySemicolon"
 ;}
@@ -1629,226 +1625,6 @@ Space::
 
 
 ; ==================================================
-; Backspace Key Setting
-; ==================================================
-
-#If GetKeyState("Backspace", "P")
-{
-; Alt Shift Func Setting
-
-Esc::
-    kf_doNothing()
-    return
-
-`::
-    return
-
-1::
-    kf_asf1()
-    return
-
-2::
-    kf_asf2()
-    return
-
-3::
-    kf_asf3()
-    return
-
-4::
-    kf_asf4()
-    return
-
-5::
-    kf_asf5()
-    return
-
-6::
-    kf_asf6()
-    return
-
-7::
-    kf_asf7()
-    return
-
-8::
-    kf_asf8()
-    return
-
-9::
-    kf_asf9()
-    return
-
-0::
-    kf_asf10()
-    return
-
--::
-    kf_asf11()
-    return
-
-=::
-    kf_asf12()
-    return
-
-; --------------------------------------------------
-
-Tab::
-    kf_doNothing()
-    return
-
-q::
-    kf_doNothing()
-    return
-
-w::
-    kf_doNothing()
-    return
-
-e::
-    kf_doNothing()
-    return
-
-r::
-    kf_doNothing()
-    return
-
-t::
-    kf_doNothing()
-    return
-
-y::
-    kf_doNothing()
-    return
-
-u::
-    kf_doNothing()
-    return
-
-i::
-    kf_doNothing()
-    return
-
-o::
-    kf_doNothing()
-    return
-
-p::
-    kf_doNothing()
-    return
-
-[::
-    kf_doNothing()
-    return
-
-]::
-    kf_doNothing()
-    return
-
-\::
-    kf_doNothing()
-    return
-
-; --------------------------------------------------
-
-a::
-    kf_doNothing()
-    return
-
-s::
-    kf_doNothing()
-    return
-
-d::
-    kf_doNothing()
-    return
-
-f::
-    kf_doNothing()
-    return
-
-g::
-    kf_doNothing()
-    return
-
-h::
-    kf_doNothing()
-    return
-
-j::
-    kf_doNothing()
-    return
-
-k::
-    kf_doNothing()
-    return
-
-l::
-    kf_doNothing()
-    return
-
-`;::
-    kf_doNothing()
-    return
-
-'::
-    kf_doNothing()
-    return
-
-Enter::
-    kf_doNothing()
-    return
-
-; --------------------------------------------------
-
-z::
-    kf_doNothing()
-    return
-
-x::
-    kf_doNothing()
-    return
-
-c::
-    kf_doNothing()
-    return
-
-v::
-    kf_doNothing()
-    return
-
-b::
-    kf_doNothing()
-    return
-
-n::
-    kf_doNothing()
-    return
-
-m::
-    kf_doNothing()
-    return
-
-,::
-    kf_doNothing()
-    return
-
-.::
-    kf_doNothing()
-    return
-
-/::
-    kf_doNothing()
-    return
-
-Space::
-    kf_doNothing()
-    return
-}
-#If
-
-
-; ==================================================
 ; Backslash Key Setting
 ; ==================================================
 
@@ -2067,6 +1843,222 @@ m::
 Space::
     kf_doNothing()
     return
+
+
+; Ctrl Alt Func Setting
+
+] & Esc::
+    kf_doNothing()
+    return
+
+] & `::
+    return
+
+] & 1::
+    kf_caf1()
+    return
+
+] & 2::
+    kf_caf2()
+    return
+
+] & 3::
+    kf_caf3()
+    return
+
+] & 4::
+    kf_caf4()
+    return
+
+] & 5::
+    kf_caf5()
+    return
+
+] & 6::
+    kf_caf6()
+    return
+
+] & 7::
+    kf_caf7()
+    return
+
+] & 8::
+    kf_caf8()
+    return
+
+] & 9::
+    kf_caf9()
+    return
+
+] & 0::
+    kf_caf10()
+    return
+
+] & -::
+    kf_caf11()
+    return
+
+] & =::
+    kf_caf12()
+    return
+
+] & Backspace::
+    kf_doNothing()
+    return
+
+] & Delete::
+    kf_doNothing()
+    return
+
+; --------------------------------------------------
+
+] & Tab::
+    kf_doNothing()
+    return
+
+] & q::
+    kf_doNothing()
+    return
+
+] & w::
+    kf_doNothing()
+    return
+
+] & e::
+    kf_doNothing()
+    return
+
+] & r::
+    kf_doNothing()
+    return
+
+] & t::
+    kf_doNothing()
+    return
+
+] & y::
+    kf_doNothing()
+    return
+
+] & u::
+    kf_doNothing()
+    return
+
+] & i::
+    kf_doNothing()
+    return
+
+] & o::
+    kf_doNothing()
+    return
+
+] & p::
+    kf_doNothing()
+    return
+
+] & [::
+    kf_doNothing()
+    return
+
+] & ]::
+    kf_doNothing()
+    return
+
+] & \::
+    kf_doNothing()
+    return
+
+; --------------------------------------------------
+
+] & a::
+    kf_doNothing()
+    return
+
+] & s::
+    kf_doNothing()
+    return
+
+] & d::
+    kf_doNothing()
+    return
+
+] & f::
+    kf_doNothing()
+    return
+
+] & g::
+    kf_doNothing()
+    return
+
+] & h::
+    kf_doNothing()
+    return
+
+] & j::
+    kf_doNothing()
+    return
+
+] & k::
+    kf_doNothing()
+    return
+
+] & l::
+    kf_doNothing()
+    return
+
+] & `;::
+    kf_doNothing()
+    return
+
+] & '::
+    kf_doNothing()
+    return
+
+] & Enter::
+    kf_doNothing()
+    return
+
+; --------------------------------------------------
+
+] & z::
+    kf_doNothing()
+    return
+
+] & x::
+    kf_doNothing()
+    return
+
+] & c::
+    kf_doNothing()
+    return
+
+] & v::
+    kf_doNothing()
+    return
+
+] & b::
+    kf_doNothing()
+    return
+
+] & n::
+    kf_doNothing()
+    return
+
+] & m::
+    kf_doNothing()
+    return
+
+] & ,::
+    kf_doNothing()
+    return
+
+] & .::
+    kf_doNothing()
+    return
+
+] & /::
+    kf_doNothing()
+    return
 }
 #If
 
@@ -2077,7 +2069,7 @@ Space::
 
 #If GetKeyState("]", "P")
 {
-; Ctrl Alt Func Setting
+; Alt Shift Func Setting
 
 Esc::
     kf_doNothing()
@@ -2087,51 +2079,51 @@ Esc::
     return
 
 1::
-    kf_caf1()
+    kf_asf1()
     return
 
 2::
-    kf_caf2()
+    kf_asf2()
     return
 
 3::
-    kf_caf3()
+    kf_asf3()
     return
 
 4::
-    kf_caf4()
+    kf_asf4()
     return
 
 5::
-    kf_caf5()
+    kf_asf5()
     return
 
 6::
-    kf_caf6()
+    kf_asf6()
     return
 
 7::
-    kf_caf7()
+    kf_asf7()
     return
 
 8::
-    kf_caf8()
+    kf_asf8()
     return
 
 9::
-    kf_caf9()
+    kf_asf9()
     return
 
 0::
-    kf_caf10()
+    kf_asf10()
     return
 
 -::
-    kf_caf11()
+    kf_asf11()
     return
 
 =::
-    kf_caf12()
+    kf_asf12()
     return
 
 Backspace::
@@ -2300,9 +2292,9 @@ Space::
 
 #If !GetKeyState("NumLock", "T")
 {
-Esc::
-    kf_doNothing()
-    return
+;Esc::
+;    kf_doNothing()
+;    return
 
 `::
     return
@@ -2355,19 +2347,19 @@ Esc::
     kf_sendChar("+")
     return
 
-Backspace::
-    kf_backspace()
-    return
+;Backspace::
+;    kf_backspace()
+;    return
 
-Delete::
-    kf_delete()
-    return
+;Delete::
+;    kf_delete()
+;    return
 
 ; --------------------------------------------------
 
-Tab::
-    kf_doNothing()
-    return
+;Tab::
+;    kf_doNothing()
+;    return
 
 q::
     kf_doNothing()
@@ -2467,9 +2459,9 @@ l::
     kf_doubleSingleQuote()
     return
 
-Enter::
-    kf_enter()
-    return
+;Enter::
+;    kf_enter()
+;    return
 
 ; --------------------------------------------------
 
@@ -2513,8 +2505,8 @@ m::
     kf_sendChar("/")
     return
 
-Space::
-    kf_keySpace()
-    return
+;Space::
+;    kf_keySpace()
+;    return
 }
 #If

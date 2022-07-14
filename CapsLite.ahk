@@ -63,7 +63,7 @@ Process Priority,,High
 start:
 
 ; ==================== START ====================
-global ctrlZ, CL, CapsLock, SP, SC, TB, EC, BSP, BSL, RSB
+global ctrlZ, CL, CapsLock, SP, SC, TB, EC, BSL, RSB
 
 
 ; ------------------ CapsLock -------------------
@@ -217,36 +217,6 @@ return
 
 setEC:
 EC:=""
-return
-
-
-; ----------------- Backspace -------------------
-$Backspace::
-BSP:=1
-
-SetTimer, setBSP, -400
-
-KeyWait, Backspace
-if BSP
-{
-    if keyset.press_bs
-    {
-        try
-            runFunc(keyset.press_bs)
-    }
-    else
-    {
-        SendInput, {Backspace}
-    }
-    ; sendinput, {esc}
-}
-BSP:=""
-
-return
-
-
-setBSP:
-BSP:=""
 return
 
 
