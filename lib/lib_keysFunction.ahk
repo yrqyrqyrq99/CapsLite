@@ -2,7 +2,11 @@
 ; 所有按键对应功能都放在这，为防止从set.ini通过按键设置调用到非按键功能函数，
 ; 规定函数以"kf_"开头
 
-; ------------------------ Basic -------------------------
+
+
+; ==================================================
+; Basic Function
+; ==================================================
 
 kf_doNothing(){
     return
@@ -41,6 +45,11 @@ kf_toggleCapsLock(){
 }
 
 
+
+; ==================================================
+; Send Char
+; ==================================================
+
 kf_toggleNumLock(){
     SetNumLockState % !GetKeyState("NumLock", "T")
     if !GetKeyState("NumLock", "T"){
@@ -52,42 +61,6 @@ kf_toggleNumLock(){
         SetTimer, RemoveToolTip, -2500
         Sleep 100
     }
-    return
-}
-
-
-kf_keySpace(){
-    SendInput, {Space}
-    return
-}
-
-
-kf_keyTab(){
-    SendInput, {Tab}
-    return
-}
-
-
-kf_keyEsc(){
-    SendInput, {Esc}
-    return
-}
-
-
-kf_keySemicolon(){
-    SendInput, {;}
-    return
-}
-
-
-kf_keyBackslash(){
-    SendInput, {\}
-    return
-}
-
-
-kf_keyRSBracket(){
-    SendInput, {]}
     return
 }
 
@@ -198,6 +171,11 @@ kf_doubleCDquote(){
 }
 
 
+
+; ==================================================
+; Case Switching
+; ==================================================
+
 ; 功能: 切换选中文字大小写
 ; 参数: Mode - 可以为 L (小写)、U (大写)、T (首字母大写)
 SwitchSelCase(Mode) {
@@ -233,6 +211,7 @@ kf_switchSelLowerCase(){
     return
 }
 
+
 ; 选中文字切换为大写
 kf_switchSelUpperCase(){
     SwitchSelCase("U")
@@ -247,7 +226,10 @@ kf_switchInitUpperCase(){
 }
 
 
-; ----------------------- Movement -----------------------
+
+; ==================================================
+; Movement
+; ==================================================
 
 kf_moveLeft(i:=1){
     SendInput, {left %i%}
@@ -353,7 +335,10 @@ kf_moveToEOF(){
 }
 
 
-; ---------------------- Selection -----------------------
+
+; ==================================================
+; Selection
+; ==================================================
 
 kf_selectUp(i:=1){
     SendInput, +{Up %i%}
@@ -446,22 +431,25 @@ kf_selectWordRight(i:=1){
 }
 
 
-; ------------------------ Delete ------------------------
+
+; ==================================================
+; Delete
+; ==================================================
 
 kf_backspace(){
-    SendInput,{backspace}
+    SendInput, {Backspace}
     return
 }
 
 
 kf_delete(){
-    SendInput,{delete}
+    SendInput, {Delete}
     return
 }
 
 
 kf_deleteAll(){
-    SendInput, ^{a}{delete}
+    SendInput, ^{a}{Delete}
     return
 }
 
@@ -480,13 +468,13 @@ kf_deleteToEOF(){
 
 kf_deleteWord(){
     SendInput, +^{left}
-    SendInput, {delete}
+    SendInput, {Delete}
     return
 }
 
 
 kf_deleteLine(){
-    SendInput,{End}+{home}{bs}
+    SendInput,{End}+{Home}{bs}
     return
 }
 
@@ -503,7 +491,10 @@ kf_deleteToEOL(){
 }
 
 
-; ----------------------- Function -----------------------
+
+; ==================================================
+; TabScript
+; ==================================================
 
 kf_getJSEvalString(){
     global
@@ -533,6 +524,14 @@ kf_tabScript(){
 }
 
 
+
+; ==================================================
+; Single & Combined Key
+; ==================================================
+
+
+; ------------------- Single Key -------------------
+
 kf_enter(){
     SendInput, {Enter}
     return
@@ -545,523 +544,9 @@ kf_esc(){
 }
 
 
-kf_undo(){
-    SendInput, ^{z}
-    return
-}
-
-
-kf_redo(){
-    SendInput, ^{y}
-    return
-}
-
-
-kf_find(){
-    SendInput, ^{f}
-    return
-}
-
-
-kf_replace(){
-    SendInput, ^{h}
-    return
-}
-
-
-kf_windowLeft(){
-    SendInput, #{Left}
-    return
-}
-
-
-kf_windowRight(){
-    SendInput, #{Right}
-    return
-}
-
-
-kf_windowUp(){
-    SendInput, #{Up}
-    return
-}
-
-
-kf_windowDown(){
-    SendInput, #{Down}
-    return
-}
-
-
-kf_lastDesktop(){
-    SendInput, ^#{Left}
-    return
-}
-
-
-kf_nextDesktop(){
-    SendInput, ^#{Right}
-    return
-}
-
-
-kf_multiTask(){
-    SendInput, #{Tab}
-    return
-}
-
-
-kf_maxWindow(){
-    WinGet,S,MinMax,A
-    if S=0
-        WinMaximize,A
-    else if S=1
-        WinRestore,A
-    else if S=-1
-        WinRestore,A
-    return
-}
-
-
-kf_minWindow(){
-    WinMinimize,A
-}
-
-
-kf_lockScreen(){
-    Run rundll32.exe user32.dll LockWorkStation
-    Sleep 1000
-    return
-}
-
-
-kf_winX(){
-    SendInput, #{x}
-    return
-}
-
-
-kf_winSearch(){
-    SendInput, #{q}
-    return
-}
-
-
-kf_explorer(){
-    SendInput, #{e}
-    return
-}
-
-
-kf_winRun(){
-    SendInput, #{r}
-    return
-}
-
-
-kf_settings(){
-    SendInput, #{i}
-    return
-}
-
-
-kf_notepad(){
-    run, "D:\Useful Tools\Notepad2\Notepad2.exe"
-    return
-}
-
-
-kf_screenshot(){
-    run, "D:\Useful Tools\Tools\FSCapture\FSCapture.exe"
-    return
-}
-
-
-kf_terminal(){
-    run, "C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\Microsoft.WindowsTerminal_8wekyb3d8bbwe\wt.exe"
-    return
-}
-
-
-kf_runBrowser(){
-    run, "D:\Work Tools\CentBrowser\CentBrowser\Application\chrome.exe"
-    return
-}
-
-
-kf_runCopyQ(){
-    run, "D:\Useful Tools\CopyQ\copyq.exe"
-    return
-}
-
-
-kf_showDesktop(){
-    SendInput, #{d}
-    return
-}
-
-
-kf_taskManager(){
-    SendInput, ^+{Esc}
-    return
-}
-
-
-kf_newFolder(){
-    SendInput, ^+{n}
-    return
-}
-
-
-kf_showCopyQ(){
-    SendInput, ^!{c}
-    return
-}
-
-
 ; 开启右键菜单
 kf_appsKey(){
     SendInput, {AppsKey}
-    return
-}
-
-
-; ---------------------- Clipboard -----------------------
-
-kf_switchClipboard(){
-    global
-    if(CLsets.global.allowClipboard)
-    {
-        CLsets.global.allowClipboard:="0"
-        setSettings("Global","allowClipboard","0")
-        showMsg("Clipboard OFF",1500)
-    }
-    else
-    {
-        CLsets.global.allowClipboard:="1"
-        setSettings("Global","allowClipboard","1")
-        showMsg("Clipboard ON",1500)
-    }
-    return
-}
-
-
-kf_pasteSystem(){
-    global
-    if (whichClipboardNow!=0)
-    {
-        allowRunOnClipboardChange:=false
-        Clipboard:=sClipboardAll
-        whichClipboardNow:=0
-    }
-    SendInput, ^{v}
-    return
-}
-
-
-kf_cut(){
-    SendInput, ^{x}
-    return
-}
-
-
-kf_copy(){
-    SendInput, ^{c}
-    return
-}
-
-
-kf_paste(){
-    SendInput, ^{v}
-    return
-}
-
-
-kf_copyPath(){
-    pathSel := Explorer_GetSelected()
-    if pathSel
-    {
-        ClipboardOld:=ClipboardAll
-        Clipboard:=pathSel
-    }
-    return
-}
-
-
-kf_cut_1(){
-    global
-    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
-    {
-        CL:=""
-        return
-    }
-    ClipboardOld:=ClipboardAll
-    Clipboard:=""
-    SendInput, ^{x}
-    ClipWait, 0.1
-    if (ErrorLevel)
-    {
-        SendInput,{home}+{End}^{x}
-        ClipWait, 0.1
-    }
-    if (!ErrorLevel)
-    {
-        clipSaver("c")
-        whichClipboardNow:=1
-    }
-    else
-    {
-        Clipboard:=ClipboardOld
-    }
-    return
-}
-
-
-kf_copy_1(){
-    global
-    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
-    {
-        CL:=""
-        return
-    }
-
-    ClipboardOld:=ClipboardAll
-    Clipboard:=""
-    SendInput, ^{insert}
-    ClipWait, 0.1
-    if (ErrorLevel)
-    {
-        SendInput,{home}+{End}^{insert}{End}
-        ClipWait, 0.1
-    }
-    if (!ErrorLevel)
-    {
-        ;  cClipboardAll:=ClipboardAll
-        clipSaver("c")
-        whichClipboardNow:=1
-    }
-    else
-    {
-        Clipboard:=ClipboardOld
-    }
-    return
-}
-
-
-kf_paste_1(){
-    global
-    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
-    {
-        CL:=""
-        return
-    }
-    if (whichClipboardNow!=1)
-    {
-        Clipboard:=cClipboardAll
-        whichClipboardNow:=1
-    }
-    SendInput, ^{v}
-    return
-}
-
-
-kf_cut_2(){
-    global
-    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
-    {
-        CL:=""
-        return
-    }
-    ClipboardOld:=ClipboardAll
-    Clipboard:=""
-    SendInput, ^{x}
-    ClipWait, 0.1
-    if (ErrorLevel)
-    {
-        SendInput,{home}+{End}^{x}
-        ClipWait, 0.1
-    }
-    if (!ErrorLevel)
-    {
-        clipSaver("ca")
-        whichClipboardNow:=2
-    }
-    else
-    {
-        Clipboard:=ClipboardOld
-    }
-    return
-}
-
-
-kf_copy_2(){
-    global
-    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
-    {
-        CL:=""
-        return
-    }
-
-    ClipboardOld:=ClipboardAll
-    Clipboard:=""
-    SendInput, ^{insert}
-    ClipWait, 0.1
-    if (ErrorLevel)
-    {
-        SendInput,{home}+{End}^{insert}{End}
-        ClipWait, 0.1
-    }
-    if (!ErrorLevel)
-    {
-        ;  caClipboardAll:=ClipboardAll
-        clipSaver("ca")
-        whichClipboardNow:=2
-    }
-    else
-    {
-        Clipboard:=ClipboardOld
-    }
-    return
-}
-
-
-kf_paste_2(){
-    global
-    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
-    {
-        CL:=""
-        return
-    }
-    if (whichClipboardNow!=2)
-    {
-        Clipboard:=caClipboardAll
-        whichClipboardNow:=2
-    }
-    SendInput, ^{v}
-    return
-}
-
-
-; ----------------------- Media -----------------------
-
-kf_volumeUp(){
-    SendInput, {Volume_Up}
-    return
-}
-
-
-kf_volumeDown(){
-    SendInput, {Volume_Down}
-    return
-}
-
-
-kf_volumeMute(){
-    SendInput, {Volume_Mute}
-    return
-}
-
-
-kf_browserForward(){
-    SendInput, {Browser_Forward}
-    return
-}
-
-
-kf_browserBack(){
-    SendInput, {Browser_Back}
-    return
-}
-
-
-kf_browserRefresh(){
-    SendInput, {Browser_Refresh}
-    return
-}
-
-
-kf_browserSearch(){
-    SendInput, {Browser_Search}
-    return
-}
-
-
-kf_browserHome(){
-    SendInput, {Browser_Home}
-    return
-}
-
-
-; ---------------------- Useful HK -----------------------
-
-kf_shiftDelete(){
-    SendInput, +{delete}
-    return
-}
-
-
-kf_altEnter(){
-    SendInput, !{Enter}
-    return
-}
-
-
-kf_ctrlEnter(){
-    SendInput, ^{Enter}
-    return
-}
-
-
-kf_ctrlS(){
-    SendInput, ^{s}
-    return
-}
-
-
-kf_ctrlD(){
-    SendInput, ^{d}
-    return
-}
-
-
-kf_ctrlW(){
-    SendInput, ^{w}
-    return
-}
-
-
-kf_altLeft(){
-    SendInput, !{Left}
-    return
-}
-
-
-kf_altRight(){
-    SendInput, !{Right}
-    return
-}
-
-
-kf_altUp(){
-    SendInput, !{Up}
-    return
-}
-
-
-kf_altDown(){
-    SendInput, !{Down}
-    return
-}
-
-
-kf_comment(){
-    SendInput, ^{/}
-    return
-}
-
-
-kf_removeHyperlink(){
-    SendInput, ^+{F9}
     return
 }
 
@@ -1138,6 +623,208 @@ kf_f12(){
 }
 
 
+kf_volumeUp(){
+    SendInput, {Volume_Up}
+    return
+}
+
+
+kf_volumeDown(){
+    SendInput, {Volume_Down}
+    return
+}
+
+
+kf_volumeMute(){
+    SendInput, {Volume_Mute}
+    return
+}
+
+
+kf_browserForward(){
+    SendInput, {Browser_Forward}
+    return
+}
+
+
+kf_browserBack(){
+    SendInput, {Browser_Back}
+    return
+}
+
+
+kf_browserRefresh(){
+    SendInput, {Browser_Refresh}
+    return
+}
+
+
+kf_browserSearch(){
+    SendInput, {Browser_Search}
+    return
+}
+
+
+kf_browserHome(){
+    SendInput, {Browser_Home}
+    return
+}
+
+
+; --------------- Ctrl Combined Key ----------------
+
+kf_cut(){
+    SendInput, ^{x}
+    return
+}
+
+
+kf_copy(){
+    SendInput, ^{c}
+    return
+}
+
+
+kf_paste(){
+    SendInput, ^{v}
+    return
+}
+
+
+kf_undo(){
+    SendInput, ^{z}
+    return
+}
+
+
+kf_redo(){
+    SendInput, ^{y}
+    return
+}
+
+
+kf_find(){
+    SendInput, ^{f}
+    return
+}
+
+
+kf_replace(){
+    SendInput, ^{h}
+    return
+}
+
+
+kf_ctrlEnter(){
+    SendInput, ^{Enter}
+    return
+}
+
+
+kf_ctrlS(){
+    SendInput, ^{s}
+    return
+}
+
+
+kf_ctrlD(){
+    SendInput, ^{d}
+    return
+}
+
+
+kf_ctrlW(){
+    SendInput, ^{w}
+    return
+}
+
+
+kf_comment(){
+    SendInput, ^{/}
+    return
+}
+
+
+; ---------------- Win Combined Key ----------------
+
+kf_windowLeft(){
+    SendInput, #{Left}
+    return
+}
+
+
+kf_windowRight(){
+    SendInput, #{Right}
+    return
+}
+
+
+kf_windowUp(){
+    SendInput, #{Up}
+    return
+}
+
+
+kf_windowDown(){
+    SendInput, #{Down}
+    return
+}
+
+
+kf_lastDesktop(){
+    SendInput, ^#{Left}
+    return
+}
+
+
+kf_nextDesktop(){
+    SendInput, ^#{Right}
+    return
+}
+
+
+kf_multiTask(){
+    SendInput, #{Tab}
+    return
+}
+
+
+kf_winX(){
+    SendInput, #{x}
+    return
+}
+
+
+kf_winSearch(){
+    SendInput, #{q}
+    return
+}
+
+
+kf_explorer(){
+    SendInput, #{e}
+    return
+}
+
+
+kf_winRun(){
+    SendInput, #{r}
+    return
+}
+
+
+kf_settings(){
+    SendInput, #{i}
+    return
+}
+
+
+kf_showDesktop(){
+    SendInput, #{d}
+    return
+}
+
+
 kf_win1(){
     SendInput, #{1}
     return
@@ -1198,7 +885,69 @@ kf_win10(){
 }
 
 
-; -------------------- combination key --------------------
+; -------------------- Others ----------------------
+
+kf_taskManager(){
+    SendInput, ^+{Esc}
+    return
+}
+
+
+kf_newFolder(){
+    SendInput, ^+{n}
+    return
+}
+
+
+kf_showCopyQ(){
+    SendInput, ^!{c}
+    return
+}
+
+
+kf_shiftDelete(){
+    SendInput, +{delete}
+    return
+}
+
+
+kf_altEnter(){
+    SendInput, !{Enter}
+    return
+}
+
+
+kf_altLeft(){
+    SendInput, !{Left}
+    return
+}
+
+
+kf_altRight(){
+    SendInput, !{Right}
+    return
+}
+
+
+kf_altUp(){
+    SendInput, !{Up}
+    return
+}
+
+
+kf_altDown(){
+    SendInput, !{Down}
+    return
+}
+
+
+kf_removeHyperlink(){
+    SendInput, ^+{F9}
+    return
+}
+
+
+; ----------------- F Combined Key -----------------
 
 ; Ctrl + Func
 
@@ -1664,5 +1413,270 @@ kf_asf11(){
 
 kf_asf12(){
     SendInput, !+{F12}
+    return
+}
+
+
+
+; ==================================================
+; System Settings
+; ==================================================
+
+kf_maxWindow(){
+    WinGet,S,MinMax,A
+    if S=0
+        WinMaximize,A
+    else if S=1
+        WinRestore,A
+    else if S=-1
+        WinRestore,A
+    return
+}
+
+
+kf_minWindow(){
+    WinMinimize,A
+}
+
+
+kf_lockScreen(){
+    Run rundll32.exe user32.dll LockWorkStation
+    Sleep 1000
+    return
+}
+
+
+
+; ==================================================
+; Specified Program
+; ==================================================
+
+kf_notepad(){
+    run, "D:\Useful Tools\Notepad2\Notepad2.exe"
+    return
+}
+
+
+kf_screenshot(){
+    run, "D:\Useful Tools\Tools\FSCapture\FSCapture.exe"
+    return
+}
+
+
+kf_terminal(){
+    run, "C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\Microsoft.WindowsTerminal_8wekyb3d8bbwe\wt.exe"
+    return
+}
+
+
+kf_runBrowser(){
+    run, "D:\Work Tools\CentBrowser\CentBrowser\Application\chrome.exe"
+    return
+}
+
+
+kf_runCopyQ(){
+    run, "D:\Useful Tools\CopyQ\copyq.exe"
+    return
+}
+
+
+
+; ==================================================
+; Copy & Paste
+; ==================================================
+
+kf_switchClipboard(){
+    global
+    if(CLsets.global.allowClipboard)
+    {
+        CLsets.global.allowClipboard:="0"
+        setSettings("Global","allowClipboard","0")
+        showMsg("Clipboard OFF",1500)
+    }
+    else
+    {
+        CLsets.global.allowClipboard:="1"
+        setSettings("Global","allowClipboard","1")
+        showMsg("Clipboard ON",1500)
+    }
+    return
+}
+
+
+kf_pasteSystem(){
+    global
+    if (whichClipboardNow!=0)
+    {
+        allowRunOnClipboardChange:=false
+        Clipboard:=sClipboardAll
+        whichClipboardNow:=0
+    }
+    SendInput, ^{v}
+    return
+}
+
+
+kf_copyPath(){
+    pathSel := Explorer_GetSelected()
+    if pathSel
+    {
+        ClipboardOld:=ClipboardAll
+        Clipboard:=pathSel
+    }
+    return
+}
+
+
+kf_cut_1(){
+    global
+    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
+    {
+        CL:=""
+        return
+    }
+    ClipboardOld:=ClipboardAll
+    Clipboard:=""
+    SendInput, ^{x}
+    ClipWait, 0.1
+    if (ErrorLevel)
+    {
+        SendInput,{home}+{End}^{x}
+        ClipWait, 0.1
+    }
+    if (!ErrorLevel)
+    {
+        clipSaver("c")
+        whichClipboardNow:=1
+    }
+    else
+    {
+        Clipboard:=ClipboardOld
+    }
+    return
+}
+
+
+kf_copy_1(){
+    global
+    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
+    {
+        CL:=""
+        return
+    }
+
+    ClipboardOld:=ClipboardAll
+    Clipboard:=""
+    SendInput, ^{insert}
+    ClipWait, 0.1
+    if (ErrorLevel)
+    {
+        SendInput,{home}+{End}^{insert}{End}
+        ClipWait, 0.1
+    }
+    if (!ErrorLevel)
+    {
+        ;  cClipboardAll:=ClipboardAll
+        clipSaver("c")
+        whichClipboardNow:=1
+    }
+    else
+    {
+        Clipboard:=ClipboardOld
+    }
+    return
+}
+
+
+kf_paste_1(){
+    global
+    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
+    {
+        CL:=""
+        return
+    }
+    if (whichClipboardNow!=1)
+    {
+        Clipboard:=cClipboardAll
+        whichClipboardNow:=1
+    }
+    SendInput, ^{v}
+    return
+}
+
+
+kf_cut_2(){
+    global
+    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
+    {
+        CL:=""
+        return
+    }
+    ClipboardOld:=ClipboardAll
+    Clipboard:=""
+    SendInput, ^{x}
+    ClipWait, 0.1
+    if (ErrorLevel)
+    {
+        SendInput,{home}+{End}^{x}
+        ClipWait, 0.1
+    }
+    if (!ErrorLevel)
+    {
+        clipSaver("ca")
+        whichClipboardNow:=2
+    }
+    else
+    {
+        Clipboard:=ClipboardOld
+    }
+    return
+}
+
+
+kf_copy_2(){
+    global
+    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
+    {
+        CL:=""
+        return
+    }
+
+    ClipboardOld:=ClipboardAll
+    Clipboard:=""
+    SendInput, ^{insert}
+    ClipWait, 0.1
+    if (ErrorLevel)
+    {
+        SendInput,{home}+{End}^{insert}{End}
+        ClipWait, 0.1
+    }
+    if (!ErrorLevel)
+    {
+        ;  caClipboardAll:=ClipboardAll
+        clipSaver("ca")
+        whichClipboardNow:=2
+    }
+    else
+    {
+        Clipboard:=ClipboardOld
+    }
+    return
+}
+
+
+kf_paste_2(){
+    global
+    if(CLsets.global.allowClipboard="0")  ;禁用剪贴板功能
+    {
+        CL:=""
+        return
+    }
+    if (whichClipboardNow!=2)
+    {
+        Clipboard:=caClipboardAll
+        whichClipboardNow:=2
+    }
+    SendInput, ^{v}
     return
 }

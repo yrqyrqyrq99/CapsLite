@@ -84,11 +84,10 @@ if CL
         try
             runFunc(keyset.press_caps)
     }
-    ; else
-    ; {
-    ;     SetCapsLockState % !GetKeyState("CapsLock","T")
-    ; }
-    ; sendinput, {esc}
+    ;else
+    ;{
+    ;    SetCapsLockState % !GetKeyState("CapsLock","T")
+    ;}
 }
 CL:=""
 
@@ -109,16 +108,7 @@ SetTimer, setSP, -400
 KeyWait, Space
 if SP
 {
-    if keyset.press_space
-    {
-        try
-            runFunc(keyset.press_space)
-    }
-    else
-    {
-        SendInput, {Space}
-    }
-    ; sendinput, {esc}
+    SendInput, {Space}
 }
 SP:=""
 
@@ -131,33 +121,24 @@ return
 
 
 ; ------------------ Semicolon ------------------
-;$`;::
-;SC:=1
-;
-;SetTimer, setSC, -400
-;
-;KeyWait, `;
-;if SC
-;{
-;    if keyset.press_sc
-;    {
-;        try
-;            runFunc(keyset.press_sc)
-;    }
-;    else
-;    {
-;        SendInput, {;}
-;    }
-;    ; sendinput, {esc}
-;}
-;SC:=""
-;
-;return
-;
-;
-;setSC:
-;SC:=""
-;return
+$`;::
+SC:=1
+
+SetTimer, setSC, -400
+
+KeyWait, `;
+if SC
+{
+    SendInput, {;}
+}
+SC:=""
+
+return
+
+
+setSC:
+SC:=""
+return
 
 
 ; -------------------- Tab ----------------------
@@ -169,16 +150,7 @@ SetTimer, setTB, -400
 KeyWait, Tab
 if TB
 {
-    if keyset.press_tab
-    {
-        try
-            runFunc(keyset.press_tab)
-    }
-    else
-    {
-        SendInput, {Tab}
-    }
-    ; sendinput, {esc}
+    SendInput, {Tab}
 }
 TB:=""
 
@@ -199,16 +171,7 @@ SetTimer, setEC, -400
 KeyWait, Esc
 if EC
 {
-    if keyset.press_esc
-    {
-        try
-            runFunc(keyset.press_esc)
-    }
-    else
-    {
-        SendInput, {Esc}
-    }
-    ; sendinput, {esc}
+    SendInput, {Esc}
 }
 EC:=""
 
@@ -229,16 +192,7 @@ SetTimer, setBSL, -400
 KeyWait, `\
 if BSL
 {
-    if keyset.press_bsl
-    {
-        try
-            runFunc(keyset.press_bsl)
-    }
-    else
-    {
-        SendInput, {\}
-    }
-    ; sendinput, {esc}
+    SendInput, {\}
 }
 BSL:=""
 
@@ -259,16 +213,7 @@ SetTimer, setRSB, -400
 KeyWait, `]
 if RSB
 {
-    if keyset.press_rsb
-    {
-        try
-            runFunc(keyset.press_rsb)
-    }
-    else
-    {
-        SendInput, {]}
-    }
-    ; sendinput, {esc}
+    SendInput, {]}
 }
 RSB:=""
 

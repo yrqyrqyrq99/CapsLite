@@ -10,41 +10,6 @@ if(!keyset.press_caps){
     keyset.press_caps:="kf_doNothing"
 }
 
-if(!keyset.press_space){
-    keyset.press_space:="kf_keySpace"
-}
-
-if(!keyset.press_tab){
-    keyset.press_tab:="kf_keyTab"
-}
-
-if(!keyset.press_esc){
-    keyset.press_esc:="kf_keyEsc"
-}
-
-;if(!keyset.press_sc){
-;    keyset.press_sc:="kf_keySemicolon"
-;}
-
-$`;::
-    KeyWait, `;, T0.4
-    if(ErrorLevel) {
-        KeyWait, `;
-        return
-    } else {
-        SendInput, {;}
-        return
-    }
-    return
-
-if(!keyset.press_bsl){
-    keyset.press_sc:="kf_keyBackslash"
-}
-
-if(!keyset.press_rsb){
-    keyset.press_sc:="kf_keyRSBracket"
-}
-
 
 ; ==================================================
 ; Mask CapsLock Combination Keys
@@ -899,7 +864,7 @@ l::
     return
 
 `;::
-    kf_comment()
+    kf_doNothing()
     return
 
 '::
@@ -1262,7 +1227,7 @@ e::
     return
 
 r::
-    kf_doNothing()
+    kf_comment()
     return
 
 t::
@@ -2292,10 +2257,6 @@ Space::
 
 #If !GetKeyState("NumLock", "T")
 {
-;Esc::
-;    kf_doNothing()
-;    return
-
 `::
     return
 
@@ -2347,19 +2308,7 @@ Space::
     kf_sendChar("+")
     return
 
-;Backspace::
-;    kf_backspace()
-;    return
-
-;Delete::
-;    kf_delete()
-;    return
-
 ; --------------------------------------------------
-
-;Tab::
-;    kf_doNothing()
-;    return
 
 q::
     kf_doNothing()
@@ -2459,10 +2408,6 @@ l::
     kf_doubleSingleQuote()
     return
 
-;Enter::
-;    kf_enter()
-;    return
-
 ; --------------------------------------------------
 
 z::
@@ -2504,9 +2449,5 @@ m::
 /::
     kf_sendChar("/")
     return
-
-;Space::
-;    kf_keySpace()
-;    return
 }
 #If
