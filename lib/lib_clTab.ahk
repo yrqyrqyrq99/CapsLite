@@ -7,9 +7,9 @@ clCalculate(inputStr,ByRef result,autoMatch:=0,isScratch:=0) ;46494*234-(123+234
     if(autoMatch){
         ;精确匹配四则运算和幂运算回合表达式  strRegEx:="i)\(*-?\d*\.?\d+\)*(\s?([-+*/]|\*\*)\s?\(*-?\d*\.?\d+\)*)*\s*(\$(b|h|x|)(\d*[eEgG]?))?\s?=?\s?$"
         ;模糊匹配所有算式
-        ;  strRegEx0:="S)``.+$"
+        ; strRegEx0:="S)``.+$"
         ; this RegEx is for monsterEval
-        ;  strRegEx:="S)(\w*\d*(\(.*\))?\s?:=|\w*?\(|\$(b|h|x|)(\d*[eEgG]?)|\d+|[\+\-'~!]|(pi|PI|[eE])\s?[-+*/]+)[\d\w\(\)\-\+\*/'!~\^\?\$:=;><|&\s%\.]*$"
+        ; strRegEx:="S)(\w*\d*(\(.*\))?\s?:=|\w*?\(|\$(b|h|x|)(\d*[eEgG]?)|\d+|[\+\-'~!]|(pi|PI|[eE])\s?[-+*/]+)[\d\w\(\)\-\+\*/'!~\^\?\$:=;><|&\s%\.]*$"
         ; this RegEx is for jsEval
         strRegEx:="\S*$"
         foundPos:=RegExMatch(inputStr, "(``)(.*)", calStr)
@@ -38,7 +38,7 @@ clCalculate(inputStr,ByRef result,autoMatch:=0,isScratch:=0) ;46494*234-(123+234
     
     if(isScratch)
         result:=eval("fixFloatCalcRudely(" . calStr2 . ")")
-    else if(CLSets.global.javascriptOriginalReturn) ; 如果.ini设置了javascriptOriginalReturn=1，则返回原js结果
+    else if(CLSets.global.javascriptOriginalReturn) ; 如果 .ini 设置了 javascriptOriginalReturn=1，则返回原 js 结果
         result:=eval(calStr2)
     else
         result:=eval("fixFloatCalcRudely(" . calStr2 . ")")

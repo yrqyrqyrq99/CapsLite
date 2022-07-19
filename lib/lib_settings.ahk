@@ -13,7 +13,7 @@ FileGetTime, settingsModifyTime, CL_Settings.ini
 
 ;init CL_Demo.ini and CL_Settings.ini
 IfNotExist, CL_Demo.ini
-{       
+{
     FileAppend, %lang_settingsDemoFileContent_1%, CL_Demo.ini, UTF-16
     FileAppend, %lang_settingsDemoFileContent_2%, CL_Demo.ini, UTF-16
     FileSetAttrib, +R, CL_Demo.ini
@@ -29,7 +29,6 @@ else
     {
         FileGetTime, thisScriptModifyTime, %A_ScriptName%
     }
-    
     thisScriptModifyTime -= setDemoModifyTime, S
     if(thisScriptModifyTime > 0) ; 如果主程序文件比较新，那就是更新过，那就覆盖一遍
     {
@@ -41,7 +40,7 @@ else
     }
 }
 IfNotExist, CL_Settings.ini
-{   
+{
     FileAppend, %lang_settingsFileContent%, CL_Settings.ini, UTF-16
 }
 lang_settingsDemoFileContent_1:=""
@@ -77,7 +76,6 @@ if(latestModifyTime!=settingsModifyTime)
     {
         isChange%sectionValue%:=settingsSectionInit(sectionValue)
         _test:=isChange%sectionValue%
-        
     }
     if(isChangeKeys)
     {
@@ -85,7 +83,6 @@ if(latestModifyTime!=settingsModifyTime)
     }
     if(isChangeGlobal) ; 如果 global 改过
     {
-        
         for key1 in setsChanges.Global
         {
             for key2 in setsChanges.Global[key1]
@@ -115,7 +112,6 @@ settingsSectionInit(sectionValue)
     IniRead, settingsKeys, CL_Settings.ini, %sectionValue%, , %A_Space%
     settingsKeys:=RegExReplace(settingsKeys, "m`n)=.*$")
     keyArr:=StrSplit(settingsKeys,"`n")
-    
     
     tempLen:=CLSets.length[sectionValue]
     if tempLen is not number ; 如果还没初始化过
@@ -249,7 +245,7 @@ return isChange
 
 globalSettings:
 ; scriptNameNoSuffix:=RegExReplace(A_ScriptName , "i)(\.ahk|\.exe)$")
-; ----------auto start-------------
+; ------------- auto start -------------
 autostartLnk:=A_StartupCommon . "\CapsLite.lnk"
 if(CLsets.global.autostart) ;如果开启开机自启动
 {
@@ -293,7 +289,7 @@ else
 }
 return
 
-; Caps+Tab 热字串替换初始化
+; TabScript 热字串替换初始化
 hotStringInit:
 global regexHotString:="iS)("
 for key,value in CLSets.TabHotString
@@ -335,6 +331,3 @@ CLhotString()
     }
     return matchKey
 }
-
-
-

@@ -6,7 +6,7 @@ FixIE(11)
 
 global obj:=ComObjCreate("HTMLfile")
 
-;---load javascript---
+;--- load javascript ---
 
 ;build-in script
 buildInScript=
@@ -75,13 +75,6 @@ escapeString(string){
 
 
 strSelected2Script(selText){
-    ; 允许这样使用caps+tab:
-    ;  o.type = obj.type||'';
-    ;  ->sort()
-    ; 等价于:
-    ;sort("o.type = obj.type||'';")
-    ;  funcArr:={}
-
     ;  regex:="(?:((?(3)\s*|\R*)->\s*([\w.]*(\((?>'[^'\\]*(?:\\.[^'\\]*)*'|""[^""\\]*(?:\\.[^""\\]*)*""|[^""'()]++|(?3))*\)))))+\s*\z"
     regex:="\R[ \t]*?\..+\(.*\)\s*$"
     
@@ -97,7 +90,7 @@ strSelected2Script(selText){
         ;  regex:="(\s*->\s*([\w.]+\((?>'[^'\\]*(?:\\.[^'\\]*)*'|""[^""\\]*(?:\\.[^""\\]*)*""|[^""'()]++|(?1))*\)))$"
         ;  loop
         ;  {
-            
+        
         ;      sliceFuncPos:=RegExMatch(funcMatch, regex, sliceFuncMatch)
         ;      if(sliceFuncPos)
         ;      {
@@ -107,7 +100,6 @@ strSelected2Script(selText){
         ;      else
         ;          break
         ;  }
-        
     }
     
     ;  if(funcArr.MaxIndex())
@@ -142,7 +134,6 @@ FixIE(Version=0, ExeName="")
     
     if Versions.HasKey(Version)
         Version := Versions[Version]
-
     
     if !ExeName
     {
@@ -158,7 +149,7 @@ FixIE(Version=0, ExeName="")
         RegDelete, HKCU, %Key%, %ExeName%
     else if(PreviousValue != Version)
         RegWrite, REG_DWORD, HKCU, %Key%, %ExeName%, %Version%
-        
+    
     ;  msgbox, % Version
     return PreviousValue
 }
@@ -173,7 +164,7 @@ if(CLSets.Global.loadScript)
         FileCreateDir, loadScript
     }
     IfNotExist, loadScript\scriptDemo.js
-    {       
+    {
         ;  FileAppend, %scriptDemoJS%, loadScript\scriptDemo.js, UTF-8-RAW
         FileInstall, loadScript\scriptDemo.js, loadScript\scriptDemo.js
     }
@@ -191,7 +182,7 @@ if(CLSets.Global.loadScript)
         }
     }
     IfNotExist, loadScript\debug.html
-    {   
+    {
         ;  FileAppend, %debugHTML%, loadScript\debug.html, UTF-8-RAW
         FileInstall, loadScript\debug.html, loadScript\debug.html
     }

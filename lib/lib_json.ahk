@@ -10,10 +10,6 @@
  * Installation:
  *     Use #Include JSON.ahk or copy into a function library folder and then
  *     use #Include <JSON>
- * Links:
- *     GitHub:     - https://github.com/cocobelgica/AutoHotkey-JSON
- *     Forum Topic - http://goo.gl/r0zI8t
- *     Email:      - cocobelgica <at> gmail <dot> com
  */
 
 
@@ -267,7 +263,7 @@ class JSON
                     is_array := value.IsArray
                 ; Array() is not overridden, rollback to old method of
                 ; identifying array-like objects. Due to the use of a for-loop
-                ; sparse arrays such as '[1,,3]' are detected as objects({}). 
+                ; sparse arrays such as '[1,,3]' are detected as objects({}).
                     if (!is_array) {
                         for i in value
                             is_array := i == A_Index

@@ -111,7 +111,6 @@
 
 - <font color=#FF5A96><b>粉色</b></font>按键为大写锁定和数字小键盘锁定键
 - <font color=#8C643C><b>茶色数字键</b></font>为 <kbd><b>Win</b></kbd> + <kbd><b>对应按键</b></kbd>
-- <font color=#8C643C><b>分号键</b></font>为 <kbd><b>Ctrl</b></kbd> + <kbd><b>/</b></kbd> ，是大多数 IDE 中的注释快捷键
 - <font color=##00D200><b>绿色</b></font>按键为系统音量调节
 - <font color=#00DCFF><b>蓝色</b></font>按键为锁屏功能键
 - <font color=#6464AA><b>紫色</b></font>按键为 <font color=#6464AA><b>TabScript</b></font> 功能
@@ -150,20 +149,23 @@
 
 其它快捷键
 
-| 按键                                                         | 实现功能                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <kbd><b>Tab</b></kbd> + <kbd><b>W</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>W</b></kbd> |
-| <kbd><b>Tab</b></kbd> + <kbd><b>H</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>←</b></kbd> |
-| <kbd><b>Tab</b></kbd> + <kbd><b>J</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>↓</b></kbd> |
-| <kbd><b>Tab</b></kbd> + <kbd><b>K</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>↑</b></kbd> |
-| <kbd><b>Tab</b></kbd> + <kbd><b>L</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>→</b></kbd> |
-|                                                              |                                                              |
-| <kbd><b>Esc</b></kbd> + <kbd><b>R</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>Enter</b></kbd> |
+| 按键                                        | 实现功能                                                     |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| <kbd><b>Tab</b></kbd> + <kbd><b>W</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>W</b></kbd>                 |
+| <kbd><b>Tab</b></kbd> + <kbd><b>T</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>/</b></kbd>                 |
+| <kbd><b>Tab</b></kbd> + <kbd><b>H</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>←</b></kbd>                  |
+| <kbd><b>Tab</b></kbd> + <kbd><b>J</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>↓</b></kbd>                  |
+| <kbd><b>Tab</b></kbd> + <kbd><b>K</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>↑</b></kbd>                  |
+| <kbd><b>Tab</b></kbd> + <kbd><b>L</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>→</b></kbd>                  |
+|                                             |                                                              |
+| <kbd><b>Esc</b></kbd> + <kbd><b>R</b></kbd> | <kbd><b>Alt</b></kbd> + <kbd><b>Enter</b></kbd>              |
 | <kbd><b>Esc</b></kbd> + <kbd><b>H</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>Shift</b></kbd> + <kbd><b>←</b></kbd> |
 | <kbd><b>Esc</b></kbd> + <kbd><b>J</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>Shift</b></kbd> + <kbd><b>↓</b></kbd> |
 | <kbd><b>Esc</b></kbd> + <kbd><b>K</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>Shift</b></kbd> + <kbd><b>↑</b></kbd> |
 | <kbd><b>Esc</b></kbd> + <kbd><b>L</b></kbd> | <kbd><b>Ctrl</b></kbd> + <kbd><b>Shift</b></kbd> + <kbd><b>→</b></kbd> |
 
+> <kbd><b>Ctrl</b></kbd> + <kbd><b>/</b></kbd> 是大多数 IDE 中的注释快捷键
+>
 > <kbd><b>Esc</b></kbd> 几个快捷键主要是在 Excel 中使用的，分别是单元格内换行和快速选中行列
 
 <br/>

@@ -36,9 +36,9 @@ LoadingChar:=[   "_('<------"
                 ,"  | ------"]
 
 Gui, LoadingGui:new, HwndLoadingGuiHwnd -Caption +AlwaysOnTop +Owner
-Gui, Font, S12 C0x555555, Lucida Console ;后备字体
-Gui, Font, S12 C0x555555, Fixedsys      ;后备字体
-Gui, Font, S12 C0x555555, Courier New   ;后备字体
+Gui, Font, S12 C0x555555, Lucida Console    ;后备字体
+Gui, Font, S12 C0x555555, Fixedsys          ;后备字体
+Gui, Font, S12 C0x555555, Courier New       ;后备字体
 Gui, Font, S12 C0x555555, Source Code Pro   ;后备字体
 Gui, Font, S12 C0x555555, Consolas
 Gui, Add, Text, HwndLoadingTextHwnd H20 W100 Center,% LoadingChar[1]

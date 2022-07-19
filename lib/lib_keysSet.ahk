@@ -1227,11 +1227,11 @@ e::
     return
 
 r::
-    kf_comment()
+    kf_doNothing()
     return
 
 t::
-    kf_doNothing()
+    kf_comment()
     return
 
 y::
