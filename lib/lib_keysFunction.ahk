@@ -1523,7 +1523,11 @@ kf_copyPath(){
     {
         ClipboardOld:=ClipboardAll
         Clipboard:=pathSel
+        ToolTip, Path Copied
+        SetTimer, RemoveToolTip, -2500
+        Sleep 100
     }
+    pathSel:=""
     return
 }
 
@@ -1576,7 +1580,7 @@ kf_copy_1(){
     }
     if (!ErrorLevel)
     {
-        ;  cClipboardAll:=ClipboardAll
+        ; cClipboardAll:=ClipboardAll
         clipSaver("c")
         whichClipboardNow:=1
     }
